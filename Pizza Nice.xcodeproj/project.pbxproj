@@ -99,12 +99,10 @@
 		D6A7093F268A8FE500F7D73C /* Pizza Nice */ = {
 			isa = PBXGroup;
 			children = (
-				D6A70940268A8FE500F7D73C /* AppDelegate.swift */,
-				D6A70942268A8FE500F7D73C /* SceneDelegate.swift */,
-				D6A70944268A8FE500F7D73C /* ViewController.swift */,
-				D6A70946268A8FE500F7D73C /* Main.storyboard */,
-				D6A70949268A8FE600F7D73C /* Assets.xcassets */,
-				D6A7094B268A8FE600F7D73C /* LaunchScreen.storyboard */,
+				D6A70973268A904D00F7D73C /* Supporting Files */,
+				D6A70970268A903600F7D73C /* Model */,
+				D6A70971268A904000F7D73C /* View */,
+				D6A70972268A904600F7D73C /* Controller */,
 				D6A7094E268A8FE600F7D73C /* Info.plist */,
 			);
 			path = "Pizza Nice";
@@ -126,6 +124,40 @@
 				D6A70964268A8FE600F7D73C /* Info.plist */,
 			);
 			path = "Pizza NiceUITests";
+			sourceTree = "<group>";
+		};
+		D6A70970268A903600F7D73C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D6A70971268A904000F7D73C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D6A70946268A8FE500F7D73C /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D6A70972268A904600F7D73C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D6A70944268A8FE500F7D73C /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D6A70973268A904D00F7D73C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D6A70940268A8FE500F7D73C /* AppDelegate.swift */,
+				D6A70942268A8FE500F7D73C /* SceneDelegate.swift */,
+				D6A70949268A8FE600F7D73C /* Assets.xcassets */,
+				D6A7094B268A8FE600F7D73C /* LaunchScreen.storyboard */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
