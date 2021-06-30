@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -20,7 +19,6 @@
                                 <rect key="frame" x="20" y="92" width="374" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="PhE-Zh-p01"/>
-                                    <constraint firstAttribute="width" constant="374" id="VjE-9m-ePd"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="38"/>
                                 <nil key="textColor"/>
@@ -29,7 +27,6 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GDj-Ks-4Ik">
                                 <rect key="frame" x="20" y="176" width="374" height="34"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="374" id="4fz-SV-lJz"/>
                                     <constraint firstAttribute="height" constant="34" id="C4G-XC-Bnq"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -54,6 +51,9 @@
                                                     <segment title="Tomates"/>
                                                     <segment title="Crème"/>
                                                 </segments>
+                                                <connections>
+                                                    <action selector="chooseBaseSegmented:" destination="BYZ-38-t0r" eventType="valueChanged" id="UJc-rq-4us"/>
+                                                </connections>
                                             </segmentedControl>
                                         </subviews>
                                     </stackView>
@@ -69,6 +69,9 @@
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0R3-rV-15H">
                                                 <rect key="frame" x="325" y="0.0" width="51" height="31"/>
+                                                <connections>
+                                                    <action selector="addCheeseSwitched:" destination="BYZ-38-t0r" eventType="valueChanged" id="3gB-PF-fNh"/>
+                                                </connections>
                                             </switch>
                                         </subviews>
                                     </stackView>
@@ -84,6 +87,9 @@
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MSq-1m-sCP">
                                                 <rect key="frame" x="325" y="0.0" width="51" height="31"/>
+                                                <connections>
+                                                    <action selector="addChorizoSwitched:" destination="BYZ-38-t0r" eventType="valueChanged" id="Z9f-mP-Fd4"/>
+                                                </connections>
                                             </switch>
                                         </subviews>
                                     </stackView>
@@ -99,6 +105,9 @@
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sde-Dp-5Rx">
                                                 <rect key="frame" x="325" y="0.0" width="51" height="31"/>
+                                                <connections>
+                                                    <action selector="addSaladeSwitched:" destination="BYZ-38-t0r" eventType="valueChanged" id="Ote-NG-gSB"/>
+                                                </connections>
                                             </switch>
                                         </subviews>
                                     </stackView>
@@ -114,6 +123,9 @@
                                             </label>
                                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="yuv-1J-I9a">
                                                 <rect key="frame" x="280" y="0.0" width="94" height="31"/>
+                                                <connections>
+                                                    <action selector="numberOfPersonTapped:" destination="BYZ-38-t0r" eventType="valueChanged" id="hHu-wv-7Hb"/>
+                                                </connections>
                                             </stepper>
                                         </subviews>
                                     </stackView>
@@ -122,7 +134,6 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Temps de cuisson : 8 min" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1lx-lD-m8y">
                                 <rect key="frame" x="20" y="508" width="374" height="28"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="374" id="3oO-KX-ySH"/>
                                     <constraint firstAttribute="height" constant="28" id="B2u-gA-gXa"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -131,6 +142,9 @@
                             </label>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="kW0-c0-jC8">
                                 <rect key="frame" x="18" y="551" width="378" height="31"/>
+                                <connections>
+                                    <action selector="timeCookingSlided:" destination="BYZ-38-t0r" eventType="valueChanged" id="3i4-mb-GIN"/>
+                                </connections>
                             </slider>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="g18-6a-9Sw" userLabel="Price Stack View">
                                 <rect key="frame" x="111.5" y="673" width="191" height="64"/>
@@ -159,16 +173,18 @@
                                 <color key="backgroundColor" red="0.3077002466" green="0.81580191849999995" blue="0.36172914509999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="NeX-nr-zUc"/>
-                                    <constraint firstAttribute="width" constant="300" id="rbD-05-jjl"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <state key="normal" title="Commander">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="purchaseButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CYU-Qb-Sh5"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.94283380495249702" green="0.97049866424473485" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="JdI-Il-Arz" firstAttribute="top" secondItem="g18-6a-9Sw" secondAttribute="bottom" constant="15" id="1Kb-eH-dI4"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1lx-lD-m8y" secondAttribute="trailing" constant="20" id="Avn-cS-fMK"/>
@@ -192,15 +208,23 @@
                             <constraint firstItem="kW0-c0-jC8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="ylp-o9-eWi"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="addCheese" destination="0R3-rV-15H" id="Tqa-uN-dfO"/>
+                        <outlet property="addChorizo" destination="MSq-1m-sCP" id="PFb-Ja-qLw"/>
+                        <outlet property="addSalade" destination="sde-Dp-5Rx" id="0Vh-p7-Edp"/>
+                        <outlet property="changeTimeSlider" destination="kW0-c0-jC8" id="o9V-Qt-hQT"/>
+                        <outlet property="chooseBase" destination="gXf-ZH-nT2" id="Zmx-nh-uuV"/>
+                        <outlet property="nameTextField" destination="GDj-Ks-4Ik" id="Qwu-El-HeX"/>
+                        <outlet property="numberStepper" destination="yuv-1J-I9a" id="rnk-pu-quG"/>
+                        <outlet property="numbersOfPersonLabel" destination="n83-Zq-S2k" id="p7y-xe-Qup"/>
+                        <outlet property="priceLabel" destination="nxJ-wY-tAK" id="Krw-LV-vY8"/>
+                        <outlet property="purchaseButton" destination="JdI-Il-Arz" id="5Jj-Gf-iJs"/>
+                        <outlet property="timeCookingLabel" destination="1lx-lD-m8y" id="RsR-PU-ods"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="93.75"/>
         </scene>
     </scenes>
-    <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-    </resources>
 </document>
