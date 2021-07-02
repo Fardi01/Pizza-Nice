@@ -13,55 +13,27 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var chooseBase: UISegmentedControl!
-    @IBOutlet weak var addCheese: UISwitch!
-    @IBOutlet weak var addChorizo: UISwitch!
-    @IBOutlet weak var addSalade: UISwitch!
-    @IBOutlet weak var numberStepper: UIStepper!
-    @IBOutlet weak var numbersOfPersonLabel: UILabel!
+    @IBOutlet weak var cheeseSwitch: UISwitch!
+    @IBOutlet weak var chorizoSwitch: UISwitch!
+    @IBOutlet weak var saladeSwitch: UISwitch!
+    @IBOutlet weak var numberOfPersonStepper: UIStepper!
+    @IBOutlet weak var numberOfPersonLabel: UILabel!
     @IBOutlet weak var timeCookingLabel: UILabel!
-    @IBOutlet weak var changeTimeSlider: UISlider!
-    @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var timeCookingSlider: UISlider!
+    @IBOutlet weak var totalPriceLabel: UILabel!
     @IBOutlet weak var purchaseButton: UIButton!
     
-    var totalPrice: Double = 8.00
-    var oldValue: Int!
-    var prix: Double = 0.00
-
-    var textPrice: String {
-        return String(prixTotal) + "0€"
-    }
-    
-    var prixTotal: Double {
-        return totalPrice - totalPrice + prix
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        numberStepper.minimumValue = 1
-        numbersOfPersonLabel.text = Int(numberStepper.value).description + " personne"
-        oldValue = Int(numberStepper.minimumValue)
-        
-        
-        
         setupButton()
         setupTextField()
-        priceLabel.text = textPrice
-        
-        // Desable Switcher
-        addCheese.isOn = false
-        addChorizo.isOn = false
-        addSalade.isOn = false
+        desableSwitch()
+        updatePrice()
         
     }
     
-    // MARK: - Setup Button
-    
-    private func setupButton() {
-        purchaseButton.layer.cornerRadius = 30
-        purchaseButton.isEnabled = false
-        purchaseButton.backgroundColor = UIColor.init(red: 170/250, green: 170/250, blue: 170/250, alpha: 0.5)
-    }
      
     // MARK: - Setup textField
     
@@ -79,14 +51,15 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
+        return true
     }
     
-    private func setupTextField() {
+    func setupTextField() {
         nameTextField.delegate = self
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
         view.addGestureRecognizer(tapGesture)
-        
     }
+    
     @objc func hideKeyboard() {
         nameTextField.resignFirstResponder()
     }
@@ -95,98 +68,101 @@ class ViewController: UIViewController, UITextFieldDelegate {
     // MARK: - Actions
     
     @IBAction func chooseBaseSegmented(_ sender: UISegmentedControl) {
-        if sender.selectedSegmentIndex == 0 {
-            print(sender.titleForSegment(at: 0)!)
-        } else {
-            print(sender.titleForSegment(at: 1)!)
-        }
+        
     }
     
     @IBAction func addCheeseSwitched(_ sender: UISwitch) {
-        // Si le switch est activé, on augmente 1,90€ dans le prix total
-        if (sender.isOn){
-            totalPrice = totalPrice + 1.90
-            totalPrice = round(totalPrice * 100) / 100
-            priceLabel.text = textPrice
-            print(prix)
-        } else {
-            totalPrice -= 1.90
-            priceLabel.text = textPrice
-            print(prix)
-        }
-        priceLabel.text = textPrice
+        updatePrice()
     }
     
     @IBAction func addChorizoSwitched(_ sender: UISwitch) {
-        // Si le switch est activé, on augmente 0,90€ dans le prix total
-        if (sender.isOn){
-            totalPrice = totalPrice + 0.90
-            totalPrice = round(totalPrice * 100) / 100
-            priceLabel.text = textPrice
-        } else {
-            totalPrice -= 0.90
-            priceLabel.text = textPrice
-        }
-        priceLabel.text = textPrice
+        updatePrice()
     }
     
     @IBAction func addSaladeSwitched(_ sender: UISwitch) {
-        // Si le switch est activé, on augmente 2,10€ dans le prix total
-        if (sender.isOn){
-            totalPrice = totalPrice + 2.10
-            totalPrice = round(totalPrice * 100) / 100
-            priceLabel.text = textPrice
-        } else {
-            totalPrice -= 2.10
-            priceLabel.text = textPrice
-        }
-        priceLabel.text = textPrice
+        updatePrice()
     }
     
     @IBAction func numberOfPersonTapped(_ sender: UIStepper) {
-        // Si + On augmente le nombre de personne, Si - on diminue le nombre de personnes
-        let personne = (Int(sender.value))
-        numbersOfPersonLabel.text = (Int(sender.value).description + " personnes")
-        
-        // Si le nombre de personne augmente, Le prix est multiplié par le nombre de personne
-        if Int(sender.value) > oldValue {
-            prix = totalPrice * Double(personne)
-            priceLabel.text = textPrice
-        } else {
-            prix = totalPrice / Double(personne)
-            priceLabel.text = textPrice
-        }
-
-        priceLabel.text = textPrice
-        
-        print(personne)
-        print(prix)
-        // Si le nombre de personne diminu, Le prix est divisé par le nombre de personne
+        numberOfPerson()
+        updatePrice()
     }
     
     @IBAction func timeCookingSlided(_ sender: UISlider) {
-        // Si le Slider passe vers les positif, le temps de cuisson augmente,
-        // Si le Slider passe vers le négatif, le temps de cuisson diminue
+        cookingTime()
     }
     
     @IBAction func purchaseButtonTapped(_ sender: UIButton) {
-        // On affiche le message,
-        // Si non, ouvrir une nouvelle page et afficher le message :
-        print("Merci pour votre commande \(nameTextField.text ?? "Personne") !\n\n"
-                + "Base : \(chooseBase.selectedSegmentIndex == 0 ? chooseBase.titleForSegment(at: 0)! : chooseBase.titleForSegment(at: 1)!) \n"
-                + "Fromage : \(addCheese.isOn ? "OUI" : "NON") \n"
-                + "Chorizo : \(addChorizo.isOn ? "OUI" : "NON") \n"
-                + "Salade : \(addSalade.isOn ? "OUI" : "NON") \n"
-                + "Part(s) : \("\(numbersOfPersonLabel.text!)") \n"
-                + "Temps de cuisson : \(timeCookingLabel.text ?? "0 min") \n\n"
-                + "=> Prix total : \(priceLabel.text ?? "0.00€")")
+        purchase()
     }
     
-//    private func priceCalculate() {
-//        if (addCheese.isOn) {
-//            totalPrice = totalPrice + 1.90
-//        }
-//    }
+    // Private func
+    private func setupButton() {
+        purchaseButton.layer.cornerRadius = 30
+        purchaseButton.isEnabled = false
+        purchaseButton.backgroundColor = UIColor.init(red: 170/250, green: 170/250, blue: 170/250, alpha: 0.5)
+    }
+    
+    private func addBase() {
+        if chooseBase.selectedSegmentIndex == 0 {
+            print(chooseBase.titleForSegment(at: 0)!)
+        } else {
+            print(chooseBase.titleForSegment(at: 1)!)
+        }
+    }
+    
+    private func desableSwitch() {
+        cheeseSwitch.isOn = false
+        chorizoSwitch.isOn = false
+        saladeSwitch.isOn = false
+    }
+    
+    private func numberOfPerson() {
+        if numberOfPersonStepper.value != 1 {
+            numberOfPersonLabel.text = (Int(numberOfPersonStepper.value).description + " personnes")
+        } else {
+            numberOfPersonLabel.text = (Int(numberOfPersonStepper.value).description + " personne")
+        }
+        updatePrice()
+    }
+    
+    private func cookingTime() {
+        timeCookingLabel.text = "Temps de cuisson : \(Int(timeCookingSlider.value).description) min"
+    }
+    
+    private func purchase() {
+        print("Merci pour votre commande \(nameTextField.text ?? "Personne") !\n\n"
+                + "Base : \(chooseBase.selectedSegmentIndex == 0 ? chooseBase.titleForSegment(at: 0)! : chooseBase.titleForSegment(at: 1)!) \n"
+                + "Fromage : \(cheeseSwitch.isOn ? "OUI" : "NON") \n"
+                + "Chorizo : \(chorizoSwitch.isOn ? "OUI" : "NON") \n"
+                + "Salade : \(saladeSwitch.isOn ? "OUI" : "NON") \n"
+                + "Part(s) : \("\(numberOfPersonLabel.text!)") \n"
+                + "\(timeCookingLabel.text!) \n\n"
+                + "=> Prix total : \(totalPriceLabel.text!)")
+    }
+    
+    func updatePrice() {
+        var totalPrice: Double = 8.00
+        
+        
+        if cheeseSwitch.isOn {
+            totalPrice += 1.90
+        }
+        
+        if chorizoSwitch.isOn {
+            totalPrice += 0.90
+        }
+        
+        if saladeSwitch.isOn {
+            totalPrice += 2.10
+        }
+        // multiplier les personnes
+        totalPrice = totalPrice * numberOfPersonStepper.value
+        totalPrice = round(totalPrice * 10) / 10
+        
+        totalPriceLabel.text = "Prix total : \(totalPrice)0€"
+    }
+    
     
 }
 
