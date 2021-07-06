@@ -23,6 +23,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var totalPriceLabel: UILabel!
     @IBOutlet weak var purchaseButton: UIButton!
     
+    var prixTotal: Double = 0.00
+    var prixUnitaire: Double = 0.00
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +34,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
         setupTextField()
         desableSwitch()
         updatePrice()
-        
     }
     
      
@@ -130,20 +132,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
         timeCookingLabel.text = "Temps de cuisson : \(Int(timeCookingSlider.value).description) min"
     }
     
-    private func purchase() {
-        print("Merci pour votre commande \(nameTextField.text ?? "Personne") !\n\n"
-                + "Base : \(chooseBase.selectedSegmentIndex == 0 ? chooseBase.titleForSegment(at: 0)! : chooseBase.titleForSegment(at: 1)!) \n"
-                + "Fromage : \(cheeseSwitch.isOn ? "OUI" : "NON") \n"
-                + "Chorizo : \(chorizoSwitch.isOn ? "OUI" : "NON") \n"
-                + "Salade : \(saladeSwitch.isOn ? "OUI" : "NON") \n"
-                + "Part(s) : \("\(numberOfPersonLabel.text!)") \n"
-                + "\(timeCookingLabel.text!) \n\n"
-                + "=> Prix total : \(totalPriceLabel.text!)")
-    }
-    
     func updatePrice() {
         var totalPrice: Double = 8.00
-        
         
         if cheeseSwitch.isOn {
             totalPrice += 1.90
@@ -159,14 +149,47 @@ class ViewController: UIViewController, UITextFieldDelegate {
         // multiplier les personnes
         totalPrice = totalPrice * numberOfPersonStepper.value
         totalPrice = round(totalPrice * 10) / 10
+        prixUnitaire = round(prixUnitaire * 10) / 10
         
         totalPriceLabel.text = "Prix total : \(totalPrice)0€"
+        prixTotal = totalPrice + totalPrice * 0.21
+        prixUnitaire = totalPrice
     }
+    
+    
+    // MARK: - Purchase button
+    private func purchase() {
+        
+        performSegue(withIdentifier: "recap", sender: self)
+        
+        
+        print("Merci pour votre commande \(nameTextField.text ?? "Personne") !\n\n"
+                + "Base : \(chooseBase.selectedSegmentIndex == 0 ? chooseBase.titleForSegment(at: 0)! : chooseBase.titleForSegment(at: 1)!) \n"
+                + "Fromage : \(cheeseSwitch.isOn ? "OUI" : "NON") \n"
+                + "Chorizo : \(chorizoSwitch.isOn ? "OUI" : "NON") \n"
+                + "Salade : \(saladeSwitch.isOn ? "OUI" : "NON") \n"
+                + "Part(s) : \("\(numberOfPersonLabel.text!)") \n"
+                + "\(timeCookingLabel.text!) \n\n"
+                + "=> Prix total : \(totalPriceLabel.text!)")
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let recapViewController = segue.destination as! RecapViewController
+        recapViewController.nameText = nameTextField.text!
+        recapViewController.cheese = cheeseSwitch.isOn ? "OUI" : "NON"
+        recapViewController.chorizo = chorizoSwitch.isOn ? "OUI" : "NON"
+        recapViewController.salade = saladeSwitch.isOn ? "OUI" : "NON"
+        recapViewController.cookingTime = timeCookingLabel.text!
+        recapViewController.numberOfPerson = numberOfPersonLabel.text!
+        recapViewController.unitPrice = String(prixUnitaire)
+        recapViewController.totalPrice = String(prixTotal)
+    }
+    
+    
     
     
 }
 
-#warning("Afficher une alerte si le bouton est inactive et que l'on clique dessus 'Veuillez renseigner votre nom avant de passer commande !'")
 #warning("Si toutes les renseignements sont bon, passer à l'écran de prise en charge de commande")
 
 

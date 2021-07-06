@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D66013C92693D05800AD1482 /* RecapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66013C82693D05800AD1482 /* RecapViewController.swift */; };
 		D6A70941268A8FE500F7D73C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A70940268A8FE500F7D73C /* AppDelegate.swift */; };
 		D6A70943268A8FE500F7D73C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A70942268A8FE500F7D73C /* SceneDelegate.swift */; };
 		D6A70945268A8FE500F7D73C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A70944268A8FE500F7D73C /* ViewController.swift */; };
@@ -15,6 +16,8 @@
 		D6A7094D268A8FE600F7D73C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6A7094B268A8FE600F7D73C /* LaunchScreen.storyboard */; };
 		D6A70958268A8FE600F7D73C /* Pizza_NiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A70957268A8FE600F7D73C /* Pizza_NiceTests.swift */; };
 		D6A70963268A8FE600F7D73C /* Pizza_NiceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A70962268A8FE600F7D73C /* Pizza_NiceUITests.swift */; };
+		D6B755562690B9410084A73E /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B755552690B9410084A73E /* TableViewController.swift */; };
+		D6B755582690B9990084A73E /* PizzaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B755572690B9990084A73E /* PizzaCell.swift */; };
 		D6F510B9268BD194005FA6DE /* Fonctionnalité.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F510B8268BD194005FA6DE /* Fonctionnalité.swift */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D66013C82693D05800AD1482 /* RecapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecapViewController.swift; sourceTree = "<group>"; };
 		D6A7093D268A8FE500F7D73C /* Pizza Nice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pizza Nice.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6A70940268A8FE500F7D73C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D6A70942268A8FE500F7D73C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -50,6 +54,8 @@
 		D6A7095E268A8FE600F7D73C /* Pizza NiceUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Pizza NiceUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6A70962268A8FE600F7D73C /* Pizza_NiceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pizza_NiceUITests.swift; sourceTree = "<group>"; };
 		D6A70964268A8FE600F7D73C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D6B755552690B9410084A73E /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		D6B755572690B9990084A73E /* PizzaCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PizzaCell.swift; sourceTree = "<group>"; };
 		D6F510B8268BD194005FA6DE /* Fonctionnalité.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Fonctionnalité.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -147,7 +153,10 @@
 		D6A70972268A904600F7D73C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				D66013C82693D05800AD1482 /* RecapViewController.swift */,
 				D6A70944268A8FE500F7D73C /* ViewController.swift */,
+				D6B755552690B9410084A73E /* TableViewController.swift */,
+				D6B755572690B9990084A73E /* PizzaCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -295,7 +304,10 @@
 			files = (
 				D6A70945268A8FE500F7D73C /* ViewController.swift in Sources */,
 				D6A70941268A8FE500F7D73C /* AppDelegate.swift in Sources */,
+				D6B755582690B9990084A73E /* PizzaCell.swift in Sources */,
+				D66013C92693D05800AD1482 /* RecapViewController.swift in Sources */,
 				D6F510B9268BD194005FA6DE /* Fonctionnalité.swift in Sources */,
+				D6B755562690B9410084A73E /* TableViewController.swift in Sources */,
 				D6A70943268A8FE500F7D73C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
