@@ -8,22 +8,35 @@
 import UIKit
 
 class TableViewController: UITableViewController {
-    
-    var viewController = ViewController()
-
-    @IBOutlet weak var Pizza1: PizzaCell!
-    @IBOutlet weak var TitlePizza: UILabel!
+    @IBOutlet var PizzaTapped: [PizzaCell]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        Pizza1.tag = 1
-        print(TitlePizza.text ?? "nul")
-
+        
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("La section est : \(indexPath.section)")
+    }
+    
+
+    // MARK: - Pass data to supplement window
+    
+    private func goToSecond() {
+        performSegue(withIdentifier: "supplement", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if let indexPath = tableView.indexPathForSelectedRow {
+            //let selectedRow = indexPath.row
+            let viewController = segue.destination as! ViewController
+            let myPizzas = PizzaTapped[indexPath.row].TitrePizza[indexPath.row]
+            let pizzaPrice = PizzaTapped[indexPath.row].prixPizza[indexPath.row]
+            viewController.thePizzaName = myPizzas
+            viewController.prixPizza = pizzaPrice
+            
+        }
+        
     }
 
-    
 }

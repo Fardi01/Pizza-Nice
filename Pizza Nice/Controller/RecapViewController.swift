@@ -32,29 +32,24 @@ class RecapViewController: UIViewController {
     var unitPrice = ""
     var totalPrice = ""
     
-    
-    var viewController = ViewController()
-
-    
+    let home = TableViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
         
         updateButton()
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        pizzaNameLabel.text = "Votre Pizza 🍕 : \(pizzaName)"
         nameLabel.text = "Nous avons bien reçu votre commande, \(nameText) 🎉!"
-        #warning("Rajouter le nom de la pizza")
         addCheeseLabel.text = "Supplément Fromage : \(cheese)"
         addChorizoLabel.text = "Supplément Chorizo : \(chorizo)"
         addSaladeLabel.text = "Supplément Salade : \(salade)"
         cookingTimeLabel.text = cookingTime
         numberOfPersonLabel.text = "Nombre de personne : \(numberOfPerson)"
         UnitPriceLabel.text = "\(unitPrice)0€"
-        totalPriceLable.text = "\(totalPrice)€"
+        totalPriceLable.text = "\(totalPrice)0€"
     }
 
     // MARK: - Actions
@@ -64,8 +59,7 @@ class RecapViewController: UIViewController {
     }
     
     @IBAction func closeButtonTapped(_ sender: UIButton) {
-        #warning("Revenir au menu principal")
-        
+        navigationController?.popToRootViewController(animated: true)
     }
-
+    
 }

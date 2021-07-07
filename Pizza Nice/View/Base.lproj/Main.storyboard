@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ja4-Ox-gZi">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="u4s-gZ-Gdg">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
@@ -11,7 +11,7 @@
         <!--Pizza Nice-->
         <scene sceneID="RsM-4p-XUo">
             <objects>
-                <tableViewController id="VG3-6k-Wnb" customClass="TableViewController" customModule="Pizza_Nice" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="Home" useStoryboardIdentifierAsRestorationIdentifier="YES" id="VG3-6k-Wnb" customClass="TableViewController" customModule="Pizza_Nice" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleAspectFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="joW-8S-I77">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -56,13 +56,13 @@
                                             <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="1"/>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="BYZ-38-t0r" kind="show" animates="NO" id="Dvc-UX-Zuf"/>
+                                            <segue destination="BYZ-38-t0r" kind="show" identifier="supplement" animates="NO" id="Dvc-UX-Zuf"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" tag="1" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="PizzaCell" textLabel="MU3-Kr-Zf3" detailTextLabel="TkM-gv-klJ" imageView="EVo-Y2-QpF" rowHeight="115" style="IBUITableViewCellStyleSubtitle" id="t6k-Bn-eza" userLabel="Pizza Cell" customClass="PizzaCell" customModule="Pizza_Nice" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="164.5" width="414" height="115"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="t6k-Bn-eza" id="NG3-LE-3Ii" customClass="PizzaCell" customModule="Pizza_Nice" customModuleProvider="target">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="1" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="t6k-Bn-eza" id="NG3-LE-3Ii" customClass="PizzaCell" customModule="Pizza_Nice" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="115"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
@@ -94,11 +94,14 @@
                                             </subviews>
                                             <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="1"/>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="BYZ-38-t0r" kind="show" identifier="classic" animates="NO" id="EXE-UP-8oD"/>
+                                        </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PizzaCell" textLabel="87G-og-fxa" detailTextLabel="Dyo-aA-Ke3" imageView="wCc-hi-GsR" rowHeight="115" style="IBUITableViewCellStyleSubtitle" id="xjB-DX-DPR" userLabel="Pizza Cell" customClass="PizzaCell" customModule="Pizza_Nice" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" tag="2" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="PizzaCell" textLabel="87G-og-fxa" detailTextLabel="Dyo-aA-Ke3" imageView="wCc-hi-GsR" rowHeight="115" style="IBUITableViewCellStyleSubtitle" id="xjB-DX-DPR" userLabel="Pizza Cell" customClass="PizzaCell" customModule="Pizza_Nice" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="279.5" width="414" height="115"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xjB-DX-DPR" id="1Pl-rN-x0G" customClass="PizzaCell" customModule="Pizza_Nice" customModuleProvider="target">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="2" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xjB-DX-DPR" id="1Pl-rN-x0G" customClass="PizzaCell" customModule="Pizza_Nice" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="115"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
@@ -129,11 +132,14 @@
                                                 </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="BYZ-38-t0r" kind="show" identifier="orientale" animates="NO" id="jDX-HU-Ghs"/>
+                                        </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PizzaCell" textLabel="wHH-XM-K05" detailTextLabel="S9h-xM-0oB" imageView="l2f-u4-3XT" rowHeight="115" style="IBUITableViewCellStyleSubtitle" id="JrQ-KN-hAi" userLabel="Pizza Cell" customClass="PizzaCell" customModule="Pizza_Nice" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="PizzaCell" textLabel="wHH-XM-K05" detailTextLabel="S9h-xM-0oB" imageView="l2f-u4-3XT" rowHeight="115" style="IBUITableViewCellStyleSubtitle" id="JrQ-KN-hAi" userLabel="Pizza Cell" customClass="PizzaCell" customModule="Pizza_Nice" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="394.5" width="414" height="115"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="JrQ-KN-hAi" id="Lir-ob-Jg5" customClass="PizzaCell" customModule="Pizza_Nice" customModuleProvider="target">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="3" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="JrQ-KN-hAi" id="Lir-ob-Jg5" customClass="PizzaCell" customModule="Pizza_Nice" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="115"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
@@ -164,11 +170,14 @@
                                                 </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="BYZ-38-t0r" kind="show" identifier="cannibale" animates="NO" id="Ry8-uk-LgD"/>
+                                        </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PizzaCell" textLabel="Bso-wK-xWC" detailTextLabel="Xdv-xa-uS5" imageView="KxA-I0-1pc" rowHeight="115" style="IBUITableViewCellStyleSubtitle" id="ZsS-vq-Yed" userLabel="Pizza Cell" customClass="PizzaCell" customModule="Pizza_Nice" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="PizzaCell" textLabel="Bso-wK-xWC" detailTextLabel="Xdv-xa-uS5" imageView="KxA-I0-1pc" rowHeight="115" style="IBUITableViewCellStyleSubtitle" id="ZsS-vq-Yed" userLabel="Pizza Cell" customClass="PizzaCell" customModule="Pizza_Nice" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="509.5" width="414" height="115"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZsS-vq-Yed" id="DsH-e1-8Fg" customClass="PizzaCell" customModule="Pizza_Nice" customModuleProvider="target">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="4" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZsS-vq-Yed" id="DsH-e1-8Fg" customClass="PizzaCell" customModule="Pizza_Nice" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="115"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
@@ -186,8 +195,8 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="12,00 €" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Q4h-bb-3fS">
-                                                    <rect key="frame" x="150" y="85.5" width="244" height="20.5"/>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="11,00 €" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Q4h-bb-3fS">
+                                                    <rect key="frame" x="150" y="85.5" width="244" height="21"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -199,11 +208,14 @@
                                                 </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="BYZ-38-t0r" kind="show" identifier="regina" animates="NO" id="ase-nb-jxO"/>
+                                        </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PizzaCell" textLabel="u2R-eT-MVF" detailTextLabel="Cml-K9-JRB" imageView="W5M-f7-q41" rowHeight="115" style="IBUITableViewCellStyleSubtitle" id="7WG-lf-lHm" userLabel="Pizza Cell" customClass="PizzaCell" customModule="Pizza_Nice" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="PizzaCell" textLabel="u2R-eT-MVF" detailTextLabel="Cml-K9-JRB" imageView="W5M-f7-q41" rowHeight="115" style="IBUITableViewCellStyleSubtitle" id="7WG-lf-lHm" userLabel="Pizza Cell" customClass="PizzaCell" customModule="Pizza_Nice" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="624.5" width="414" height="115"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7WG-lf-lHm" id="04h-2L-tfd" customClass="PizzaCell" customModule="Pizza_Nice" customModuleProvider="target">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="5" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7WG-lf-lHm" id="04h-2L-tfd" customClass="PizzaCell" customModule="Pizza_Nice" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="115"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
@@ -234,11 +246,14 @@
                                                 </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="BYZ-38-t0r" kind="show" identifier="calzone" animates="NO" id="CDH-lT-Yry"/>
+                                        </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PizzaCell" textLabel="Qf8-2O-QLp" detailTextLabel="iYY-yL-2Dr" imageView="GYS-rM-8FM" rowHeight="115" style="IBUITableViewCellStyleSubtitle" id="cX2-fL-G4P" userLabel="Pizza Cell" customClass="PizzaCell" customModule="Pizza_Nice" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="PizzaCell" textLabel="Qf8-2O-QLp" detailTextLabel="iYY-yL-2Dr" imageView="GYS-rM-8FM" rowHeight="115" style="IBUITableViewCellStyleSubtitle" id="cX2-fL-G4P" userLabel="Pizza Cell" customClass="PizzaCell" customModule="Pizza_Nice" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="739.5" width="414" height="115"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cX2-fL-G4P" id="t5w-Gr-Rig" customClass="PizzaCell" customModule="Pizza_Nice" customModuleProvider="target">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="6" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cX2-fL-G4P" id="t5w-Gr-Rig" customClass="PizzaCell" customModule="Pizza_Nice" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="115"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
@@ -269,11 +284,14 @@
                                                 </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="BYZ-38-t0r" kind="show" identifier="montagnard" animates="NO" id="gsB-Rh-wxD"/>
+                                        </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PizzaCell" textLabel="ew1-Zk-sfk" detailTextLabel="6c5-cT-kHt" imageView="5bd-2t-nPl" rowHeight="115" style="IBUITableViewCellStyleSubtitle" id="ru6-z8-4Lo" userLabel="Pizza Cell" customClass="PizzaCell" customModule="Pizza_Nice" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="PizzaCell" textLabel="ew1-Zk-sfk" detailTextLabel="6c5-cT-kHt" imageView="5bd-2t-nPl" rowHeight="115" style="IBUITableViewCellStyleSubtitle" id="ru6-z8-4Lo" userLabel="Pizza Cell" customClass="PizzaCell" customModule="Pizza_Nice" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="854.5" width="414" height="115"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ru6-z8-4Lo" id="7sF-IE-Phf" customClass="PizzaCell" customModule="Pizza_Nice" customModuleProvider="target">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="7" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ru6-z8-4Lo" id="7sF-IE-Phf" customClass="PizzaCell" customModule="Pizza_Nice" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="115"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
@@ -304,6 +322,9 @@
                                                 </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="BYZ-38-t0r" kind="show" identifier="poulet" animates="NO" id="0af-2C-xNW"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -315,18 +336,24 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Pizza Nice" id="Glh-lP-CdR"/>
                     <connections>
-                        <outlet property="Pizza1" destination="xfp-mu-Qyz" id="vWa-Uk-EKb"/>
-                        <outlet property="TitlePizza" destination="zMs-uP-rCp" id="rn8-Y7-KXs"/>
+                        <outletCollection property="PizzaTapped" destination="xfp-mu-Qyz" collectionClass="NSMutableArray" id="Qfe-2l-c0t"/>
+                        <outletCollection property="PizzaTapped" destination="t6k-Bn-eza" collectionClass="NSMutableArray" id="6Px-f6-RaM"/>
+                        <outletCollection property="PizzaTapped" destination="xjB-DX-DPR" collectionClass="NSMutableArray" id="t8y-yx-XlC"/>
+                        <outletCollection property="PizzaTapped" destination="JrQ-KN-hAi" collectionClass="NSMutableArray" id="qYU-Tg-eRm"/>
+                        <outletCollection property="PizzaTapped" destination="ZsS-vq-Yed" collectionClass="NSMutableArray" id="Qp1-W8-ztY"/>
+                        <outletCollection property="PizzaTapped" destination="7WG-lf-lHm" collectionClass="NSMutableArray" id="Bb2-m0-rDW"/>
+                        <outletCollection property="PizzaTapped" destination="cX2-fL-G4P" collectionClass="NSMutableArray" id="zvg-BW-cGS"/>
+                        <outletCollection property="PizzaTapped" destination="ru6-z8-4Lo" collectionClass="NSMutableArray" id="iNg-hO-YAH"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mfz-II-QPJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="11.594202898550726" y="77.678571428571431"/>
+            <point key="canvasLocation" x="680" y="37"/>
         </scene>
         <!--Supplements-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="ViewController" customModule="Pizza_Nice" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Pizza_Nice" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -340,12 +367,12 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GDj-Ks-4Ik">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Votre prenom :" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GDj-Ks-4Ik">
                                 <rect key="frame" x="20" y="191" width="374" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="C4G-XC-Bnq"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" textContentType="name"/>
                             </textField>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="WLB-Wj-9ZJ" userLabel="Ingredients Stack View">
@@ -525,12 +552,12 @@
                         <outlet property="timeCookingLabel" destination="1lx-lD-m8y" id="RsR-PU-ods"/>
                         <outlet property="timeCookingSlider" destination="kW0-c0-jC8" id="o9V-Qt-hQT"/>
                         <outlet property="totalPriceLabel" destination="nxJ-wY-tAK" id="Krw-LV-vY8"/>
-                        <segue destination="JeB-65-Pe0" kind="presentation" identifier="recap" modalPresentationStyle="fullScreen" id="4OA-yV-LQn"/>
+                        <segue destination="JeB-65-Pe0" kind="presentation" identifier="recap" animates="NO" modalPresentationStyle="fullScreen" id="4OA-yV-LQn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="822" y="78"/>
+            <point key="canvasLocation" x="1481" y="37"/>
         </scene>
         <!--Recapitulatif-->
         <scene sceneID="oVw-i5-pq7">
@@ -682,7 +709,8 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="closeButtonTapped:" destination="JeB-65-Pe0" eventType="touchUpInside" id="GYn-Ai-2uJ"/>
+                                    <action selector="closeButtonTapped:" destination="JeB-65-Pe0" eventType="touchUpInside" id="Nga-Ol-T2B"/>
+                                    <segue destination="u4s-gZ-Gdg" kind="presentation" animates="NO" modalPresentationStyle="fullScreen" id="kUb-pe-0dX"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="dZ8-P0-aY6">
@@ -757,25 +785,112 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jep-c1-umV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1627.536231884058" y="77.678571428571431"/>
+            <point key="canvasLocation" x="2290" y="37"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="5Xm-jb-4SB">
+            <objects>
+                <viewController id="u4s-gZ-Gdg" customClass="HomeViewController" customModule="Pizza_Nice" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FM3-vG-ngp">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pizza-2589577_1920" translatesAutoresizingMaskIntoConstraints="NO" id="pNm-Md-X5g">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aBJ-jx-5Y7">
+                                <rect key="frame" x="48" y="529" width="318" height="55"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="kJ4-XG-qgq"/>
+                                    <constraint firstAttribute="width" constant="318" id="rBL-cS-Xpr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <state key="normal" title="Commencer">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="ja4-Ox-gZi" kind="presentation" animates="NO" modalPresentationStyle="fullScreen" id="yP9-eS-pgo"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bienvenue chez Nice Pizza !" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8fw-VP-IXH">
+                                <rect key="frame" x="20" y="294" width="374" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="33" id="4vP-ci-SEk"/>
+                                    <constraint firstAttribute="width" constant="374" id="7zR-Sj-zfT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Les meilleurs Pizza Napolitaines traditionnelles de la ville de Nice !" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lIp-Zy-xEY">
+                                <rect key="frame" x="20" y="335" width="374" height="69"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="69" id="5Br-Qr-Rq6"/>
+                                    <constraint firstAttribute="width" constant="374" id="XC2-8x-6S0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cliquez ici pour découvir :" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i1H-7L-Pj2">
+                                <rect key="frame" x="20" y="458" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="wXE-oA-qdh"/>
+                        <color key="backgroundColor" red="0.0" green="0.92636328940000001" blue="0.97474294900000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="aBJ-jx-5Y7" firstAttribute="top" secondItem="i1H-7L-Pj2" secondAttribute="bottom" constant="50" id="0NS-61-gTP"/>
+                            <constraint firstItem="aBJ-jx-5Y7" firstAttribute="leading" secondItem="wXE-oA-qdh" secondAttribute="leading" constant="48" id="Aru-g0-PU0"/>
+                            <constraint firstItem="wXE-oA-qdh" firstAttribute="trailing" secondItem="lIp-Zy-xEY" secondAttribute="trailing" constant="20" id="DR2-cj-GNV"/>
+                            <constraint firstItem="8fw-VP-IXH" firstAttribute="top" secondItem="wXE-oA-qdh" secondAttribute="top" constant="250" id="EZj-pW-H7D"/>
+                            <constraint firstItem="wXE-oA-qdh" firstAttribute="trailing" secondItem="i1H-7L-Pj2" secondAttribute="trailing" constant="20" id="Gch-fU-x23"/>
+                            <constraint firstItem="lIp-Zy-xEY" firstAttribute="top" secondItem="8fw-VP-IXH" secondAttribute="bottom" constant="8" id="PKN-j3-YMz"/>
+                            <constraint firstItem="i1H-7L-Pj2" firstAttribute="leading" secondItem="wXE-oA-qdh" secondAttribute="leading" constant="20" id="d2T-t4-bZk"/>
+                            <constraint firstItem="lIp-Zy-xEY" firstAttribute="leading" secondItem="wXE-oA-qdh" secondAttribute="leading" constant="20" id="mZv-b1-UdD"/>
+                            <constraint firstItem="8fw-VP-IXH" firstAttribute="leading" secondItem="wXE-oA-qdh" secondAttribute="leading" constant="20" id="oTL-AM-vWQ"/>
+                            <constraint firstItem="wXE-oA-qdh" firstAttribute="trailing" secondItem="aBJ-jx-5Y7" secondAttribute="trailing" constant="48" id="ocE-7N-Uu7"/>
+                            <constraint firstItem="wXE-oA-qdh" firstAttribute="trailing" secondItem="8fw-VP-IXH" secondAttribute="trailing" constant="20" id="rmf-7e-Bnm"/>
+                            <constraint firstItem="i1H-7L-Pj2" firstAttribute="top" secondItem="lIp-Zy-xEY" secondAttribute="bottom" constant="54" id="z09-Cm-eou"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Home" largeTitleDisplayMode="always" id="b2M-kR-XJC"/>
+                    <connections>
+                        <outlet property="startButton" destination="aBJ-jx-5Y7" id="eUp-iL-2jG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G4X-r5-q56" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1257" y="37"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dk3-2r-TSJ">
             <objects>
                 <navigationController id="ja4-Ox-gZi" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="CdF-u5-8WQ"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="poM-Ck-fYt">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="03g-5T-W8o">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
-                        <segue destination="VG3-6k-Wnb" kind="relationship" relationship="rootViewController" id="9XK-lM-Fjq"/>
+                        <segue destination="VG3-6k-Wnb" kind="relationship" relationship="rootViewController" id="Sni-4w-SMu"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5wI-63-SYo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-851" y="78"/>
+            <point key="canvasLocation" x="-264" y="37"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Dvc-UX-Zuf"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="Pizza 1bis" width="500" height="500"/>
         <image name="Pizza 2bis" width="500" height="500"/>
@@ -786,6 +901,7 @@
         <image name="Pizza 7bis" width="500" height="500"/>
         <image name="Pizza 8bis" width="500" height="500"/>
         <image name="Tracé 1" width="1694" height="1627"/>
+        <image name="pizza-2589577_1920" width="1280" height="1920"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
